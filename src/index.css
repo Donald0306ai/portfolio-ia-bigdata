@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0055EF;
+  --color-bg-dark: #041233;
+  --color-bg-card: #0A0E27;
+  --color-bg-card-light: #0B1D45;
+
+  --color-accent-blue: #4F6EF7;
+  --color-accent-blue-light: #8BB4FF;
+  --color-accent-violet: #7C3AED;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D6E0FF;
+  --color-text-muted: #A9BEF7;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --font-sans: "Inter", "Sora", ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #050b1e;
+    background-image:
+      radial-gradient(ellipse 30% 25% at 6% 4%, rgba(5, 73, 192, 0.9), transparent 60%),
+      radial-gradient(ellipse 35% 30% at 18% 22%, rgba(40, 103, 237, 0.55), transparent 65%),
+      radial-gradient(ellipse 25% 40% at 28% 55%, rgba(30, 90, 220, 0.5), transparent 70%),
+      radial-gradient(ellipse 30% 35% at 10% 75%, rgba(5, 19, 63, 0.85), transparent 65%),
+      radial-gradient(ellipse 40% 45% at 78% 15%, rgba(7, 20, 74, 0.9), transparent 60%),
+      radial-gradient(ellipse 45% 40% at 68% 65%, rgba(30, 70, 220, 0.55), transparent 65%),
+      radial-gradient(ellipse 35% 35% at 92% 80%, rgba(40, 90, 230, 0.5), transparent 65%),
+      linear-gradient(135deg, #030814 0%, #041233 35%, #0038B8 70%, #0047C4 100%);
+    background-blend-mode: screen, screen, screen, multiply, multiply, screen, screen, normal;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(90deg, #FFFFFF, #B9CBFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .card-dark {
+    background: #0A0E27;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+  }
+
+  .card-number {
+    color: #8BB4FF;
+  }
+
+  .btn-primary {
+    background: #FFFFFF;
+    color: #0038B8;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+  }
+}
