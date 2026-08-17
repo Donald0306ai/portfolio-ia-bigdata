@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, Sparkles, X } from 'lucide-react'
+import { ArrowUpRight, X } from 'lucide-react'
 import ite702 from '../../assets/images/certifications/ite-702-french.png'
+import anTR from '../../assets/images/certifications/AnTR.png'
+import anGE from '../../assets/images/certifications/AnGE.png'
 
 const certifications = [
   {
@@ -10,6 +12,20 @@ const certifications = [
     category: 'Cisco Networking Academy',
     description: "Certificat obtenu auprès de l'Institut Internationale des Sciences et des Arts du Numérique, dans le cadre du programme Cisco Networking Academy.",
     image: ite702,
+  },
+  {
+    number: '02',
+    title: "Fondamentaux de l'analyse en temps réel",
+    category: 'Microsoft',
+    description: "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données en temps réel.",
+    image: anTR,
+  },
+  {
+    number: '03',
+    title: "Fondamentaux de l'analyse à grande échelle",
+    category: 'Microsoft',
+    description: "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données à grande échelle.",
+    image: anGE,
   },
 ]
 
@@ -47,7 +63,7 @@ export default function Certifications() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0">
           {certifications.map((cert, i) => (
             <motion.button
               key={cert.number}
@@ -57,21 +73,23 @@ export default function Certifications() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
               whileHover={{ y: -6 }}
-              className="bg-[#0A0E27] border border-white/10 rounded-2xl overflow-hidden group cursor-pointer text-left"
+              className="bg-[#0A0E27] border border-white/10 rounded-2xl overflow-hidden group cursor-pointer text-left shrink-0 w-[82%] xs:w-[70%] sm:w-auto snap-center"
             >
-              <div className="relative h-40 sm:h-44 overflow-hidden bg-[#060818] flex items-center justify-center">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#060818] flex items-center justify-center">
                 <span className="absolute top-3 left-3 z-10 bg-[#041233]/80 backdrop-blur-sm border border-white/10 text-white text-xs font-semibold px-2.5 py-1 rounded-lg">
                   {cert.number}
                 </span>
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  width={800}
+                  height={500}
+                  className="w-full h-full object-cover object-center scale-[1.12] group-hover:scale-[1.18] transition-transform duration-300"
                 />
               </div>
 
               <div className="p-5">
-                <h3 className="text-white font-semibold text-lg mb-1">{cert.title}</h3>
+                <h3 className="text-white font-semibold text-lg mb-1 min-h-[3.5rem] line-clamp-2">{cert.title}</h3>
                 <p className="text-[#8BB4FF]/70 text-xs uppercase tracking-wide mb-3">
                   {cert.category}
                 </p>
@@ -85,29 +103,10 @@ export default function Certifications() {
               </div>
             </motion.button>
           ))}
-
-          {[1, 2].map((n) => (
-            <motion.div
-              key={n}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (certifications.length + n) * 0.1 }}
-              className="bg-[#0A0E27] border border-dashed border-white/15 rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center p-8 min-h-[280px] sm:min-h-0"
-            >
-              <span className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                <Sparkles size={18} className="text-[#8BB4FF]" />
-              </span>
-              <h3 className="text-white/70 font-semibold text-base mb-1">Certificat à venir</h3>
-              <p className="text-white/40 text-sm leading-relaxed">
-                Une nouvelle certification est en cours d'obtention.
-              </p>
-            </motion.div>
-          ))}
         </div>
 
         <div className="flex items-center justify-center gap-2 mt-10">
-          {[0, 1, 2].map((i) => (
+          {certifications.map((_, i) => (
             <span
               key={i}
               className={`h-1.5 rounded-full transition-all ${
