@@ -1,17 +1,11 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { SiPython, SiTensorflow, SiPandas, SiPostgresql, SiJupyter, SiScikitlearn } from 'react-icons/si'
+import { SiPython, SiReact, SiHtml5, SiCss, SiPostgresql, SiGit, SiTailwindcss } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa'
+import { VscCode } from 'react-icons/vsc'
+import profilePhoto from '../../assets/images/profile.png'
 
 const terminalLines = ['IA_', 'BIG DATA_', 'DÉVELOPPEMENT_']
-
-const floatingIcons = [
-  { Icon: SiPython, color: '#3776AB', top: '8%', left: '18%', delay: 0 },
-  { Icon: SiTensorflow, color: '#FF6F00', top: '55%', left: '5%', delay: 0.4 },
-  { Icon: SiPandas, color: '#150458', top: '78%', left: '30%', delay: 0.8 },
-  { Icon: SiPostgresql, color: '#4169E1', top: '15%', left: '75%', delay: 1.2 },
-  { Icon: SiJupyter, color: '#F37626', top: '65%', left: '80%', delay: 1.6 },
-  { Icon: SiScikitlearn, color: '#F7931E', top: '40%', left: '55%', delay: 2 },
-]
 
 export default function Hero() {
   return (
@@ -101,27 +95,47 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative h-[380px] sm:h-[460px] lg:h-[520px]">
-          {floatingIcons.map(({ Icon, color, top, left, delay }, i) => (
+        <div className="relative h-[420px] sm:h-[520px] lg:h-[580px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <div className="relative w-72 sm:w-96 lg:w-[420px] aspect-square rounded-full overflow-hidden border border-white/10 shadow-2xl">
+              <img
+                src={profilePhoto}
+                alt="Amouzougan Folly Jean Donald"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </motion.div>
+
+          {[
+            { Icon: SiPython, color: '#3776AB', top: '1%', left: 'calc(50% - 26px)', delay: 0, size: 52 },
+            { Icon: FaJava, color: '#E76F00', top: '12%', left: '80%', delay: 0.25, size: 44 },
+            { Icon: SiPostgresql, color: '#4169E1', top: '50%', left: '90%', delay: 0.5, size: 48 },
+            { Icon: SiGit, color: '#F05032', top: '82%', left: '80%', delay: 0.75, size: 44 },
+            { Icon: SiHtml5, color: '#E34F26', top: '88%', left: 'calc(50% - 22px)', delay: 1, size: 44 },
+            { Icon: VscCode, color: '#007ACC', top: '82%', left: '10%', delay: 1.25, size: 44 },
+            { Icon: SiReact, color: '#61DAFB', top: '50%', left: '0%', delay: 1.5, size: 48 },
+            { Icon: SiCss, color: '#1572B6', top: '12%', left: '10%', delay: 1.75, size: 44 },
+          ].map(({ Icon, color, top, left, delay, size }, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1, y: [0, -14, 0] }}
+              animate={{ opacity: 1, scale: 1, y: [0, -12, 0] }}
               transition={{
                 opacity: { duration: 0.5, delay },
                 scale: { duration: 0.5, delay },
                 y: { duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay },
               }}
-              className="absolute w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#0A0E27] border border-white/10 flex items-center justify-center shadow-lg"
-              style={{ top, left }}
+              className="absolute z-10 rounded-2xl bg-[#0A0E27] border border-white/10 flex items-center justify-center shadow-lg"
+              style={{ top, left, width: size, height: size }}
             >
-              <Icon size={26} color={color} />
+              <Icon size={size * 0.46} color={color} />
             </motion.div>
           ))}
-
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-40 h-40 sm:w-52 sm:h-52 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm" />
-          </div>
         </div>
       </div>
     </section>

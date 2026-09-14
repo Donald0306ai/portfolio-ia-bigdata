@@ -33,8 +33,6 @@ const skillCategories = [
   {
     title: 'Dev & outils',
     skills: [
-      { name: 'Vite', Icon: SiVite, color: '#646CFF' },
-      { name: 'Tailwind', Icon: SiTailwindcss, color: '#06B6D4' },
       { name: 'VS Code', Icon: VscCode, color: '#007ACC' },
       { name: 'XAMPP', Icon: SiXampp, color: '#FB7A24' },
       { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' },

@@ -4,27 +4,39 @@ import { ArrowUpRight, X } from 'lucide-react'
 import ite702 from '../../assets/images/certifications/ite-702-french.png'
 import anTR from '../../assets/images/certifications/AnTR.png'
 import anGE from '../../assets/images/certifications/AnGE.png'
+import python from '../../assets/images/certifications/python.png'
 
 const certifications = [
   {
     number: '01',
-    title: 'ITE 7.02 French',
-    category: 'Cisco Networking Academy',
-    description: "Certificat obtenu auprès de l'Institut Internationale des Sciences et des Arts du Numérique, dans le cadre du programme Cisco Networking Academy.",
-    image: ite702,
+    title: 'Programming for Everybody',
+    category: 'University of Michigan · Coursera',
+    description:
+      "Certification obtenue dans le cadre de l’apprentissage de Python et des fondamentaux de la programmation.",
+    image: python,
   },
   {
     number: '02',
-    title: "Fondamentaux de l'analyse en temps réel",
-    category: 'Microsoft',
-    description: "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données en temps réel.",
-    image: anTR,
+    title: 'ITE 7.02 French',
+    category: 'Cisco Networking Academy',
+    description:
+      "Certificat obtenu auprès de l'Institut Internationale des Sciences et des Arts du Numérique, dans le cadre du programme Cisco Networking Academy.",
+    image: ite702,
   },
   {
     number: '03',
+    title: "Fondamentaux de l'analyse en temps réel",
+    category: 'Microsoft',
+    description:
+      "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données en temps réel.",
+    image: anTR,
+  },
+  {
+    number: '04',
     title: "Fondamentaux de l'analyse à grande échelle",
     category: 'Microsoft',
-    description: "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données à grande échelle.",
+    description:
+      "Badge Microsoft obtenu pour la maîtrise des fondamentaux de l'analyse de données à grande échelle.",
     image: anGE,
   },
 ]
