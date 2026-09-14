@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { SiPython, SiReact, SiHtml5, SiCss, SiPostgresql, SiGit, SiTailwindcss } from 'react-icons/si'
+import { SiPython, SiReact, SiHtml5, SiCss, SiPostgresql, SiGit } from 'react-icons/si'
 import { FaJava } from 'react-icons/fa'
 import { VscCode } from 'react-icons/vsc'
 import profilePhoto from '../../assets/images/profile.png'
