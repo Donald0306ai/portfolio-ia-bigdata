@@ -6,8 +6,6 @@ import {
   SiArduino,
   SiLinux,
   SiReact,
-  SiTailwindcss,
-  SiVite,
   SiXampp,
   SiPostgresql,
   SiPython,
